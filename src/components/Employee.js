@@ -68,7 +68,7 @@ export const Employee = () => {
                     record.map((curElem) => {
                         const { id, username, department, rating } = curElem;
                         return (
-                            <div className='child'>
+                            <div key={id} className='child'>
                                 <span>Name : {username} | </span>
                                 <span>Department : {department} | </span>
                                 <span>Rating : {rating}</span>
