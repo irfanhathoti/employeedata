@@ -28,7 +28,7 @@ label{
     color: linen;
     font-size: large;
 }
-div{
+.card{
     margin-top: 30px;
 }
 button{
@@ -36,4 +36,13 @@ button{
     font-size: large;
     /* color: linen; */
     /* border-radius: 5px; */
+}
+.parent
+{
+    background-color: rgba(119, 136, 153, 0.404);
+    display: flex;
+    justify-content: space-between;
+    width: 800px;
+    
+    /* flex-wrap: wrap; */
 }

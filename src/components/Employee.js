@@ -23,6 +23,7 @@ export const Employee = () => {
     const HandleSubmit = (e) =>
     {
         e.preventDefault()
+        console.log("hello")
         const newData = { ...data,id:new Date().getTime().toString()}
         console.log(data)
 
@@ -35,27 +36,28 @@ export const Employee = () => {
             rating:""
 
         })
-        console.log(record)
+        // console.log(record)
+
 
     }
-
     return (
         <>
+
             <h1>EMPLOYEE FEEDBACK FORM</h1>
             <form action='' onSubmit={HandleSubmit}>
-                <div>
+                <div className='card'>
                     <label htmlFor='username'>Name  </label>
                     <br />
                     <input type='text'  value={data.username} onChange={HandleInput} name='username' id='username' />
                 </div>
 
-                <div>
+                <div className='card'>
                     <label htmlFor='department'>Department  </label>
                     <br />
                     <input type='text'  value={data.department} onChange={HandleInput} name='department' id='department' />
                 </div>
 
-                <div>
+                <div className='card'>
                     <label htmlFor='rate'>Rating  </label>
                     <br />
                     <input type='text' value={data.rate} onChange={HandleInput}  name='rating' id='rating' />
@@ -65,6 +67,18 @@ export const Employee = () => {
             </form>
             <div>
                 {
+                    record.map((curElem) => {
+                        const {id, username, department , rating} = curElem;
+                        return(
+                            <div className='parent'>
+                                <span>Name : {username}</span>
+                                <span>Department : {department} </span>
+                                <span>Rating : {rating} </span>
+                            </div>
+                        )
+                        console.log(curElem)
+                    })
+                    
 
                 }
             </div>
