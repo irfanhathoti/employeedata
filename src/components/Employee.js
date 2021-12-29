@@ -10,6 +10,7 @@ export const Employee = () => {
 
         }
     )
+    console.log(data)
     const [record, setRecord] = useState([])
     const HandleInput = (e) => {
         const name = e.target.name
@@ -36,7 +37,7 @@ export const Employee = () => {
         })
         // console.log(record)
 
-
+        
     }
     return (
         <>
@@ -60,7 +61,7 @@ export const Employee = () => {
                     <br />
                     <input type="number" autoComplete='off' value={data.rate} onChange={HandleInput} name='rating' id='rating' />
                 </div>
-                <button type="submit">Submit</button>
+                <button  type="submit">Submit</button>
 
             </form>
             <div className='parent'>
