@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import './Style.css'
 
 export const Employee = () => {
+    const [isToggle,setIsToggle] = useState(true)
     const [data, setData] = useState(
         {
             username: "",
@@ -25,6 +26,7 @@ export const Employee = () => {
         console.log("hello")
         const newData = { ...data, id: new Date().getTime().toString() }
         console.log(data)
+        setIsToggle(false)
 
 
         setRecord([...record, newData])
@@ -40,6 +42,8 @@ export const Employee = () => {
         
     }
     return (
+        <>
+        {isToggle ? 
         <>
 
             <h1>EMPLOYEE FEEDBACK FORM</h1>
@@ -63,7 +67,8 @@ export const Employee = () => {
                 </div>
                 <button  type="submit">Submit</button>
 
-            </form>
+            </form></>
+            : <>
             <div className='parent'>
                 {
                     record.map((curElem) => {
@@ -81,6 +86,9 @@ export const Employee = () => {
 
                 }
             </div>
+            <button className = "btn" onClick={() =>setIsToggle(true)}>Go Back</button>
+            </>
+}
 
 
 

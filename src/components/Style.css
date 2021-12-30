@@ -68,3 +68,7 @@ button:hover
     text-align: center;
     color: palevioletred;
 }
+.btn
+{
+    margin-left: 638px;
+}
